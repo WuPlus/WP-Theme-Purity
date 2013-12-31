@@ -1,64 +1,32 @@
 <div id="sidebar" style="display:block;"> 
     <?php if ( !is_user_logged_in() ) {
-        echo "<a id='leftbutton' class='pure-button' href='".wp_login_url($redirect)."'>Login</a>";
-        echo "<a id='rightbutton' class='pure-button' href='".wp_registration_url()."'>Register</a>";
+        echo "<a id='leftbutton' class='pure-button' href='".wp_login_url($redirect)."'>登录</a>";
+        echo "<a id='rightbutton' class='pure-button' href='".wp_registration_url()."'>注册</a>";
     } else {
         # code...
-        echo "<a id='leftbutton' class='pure-button' href='".wp_logout_url($redirect)."'>Logout</a>";
-        echo "<a id='rightbutton' class='pure-button' href='http://www.wuplus.net/wp/wordpress/wp-admin/'>Admin</a>";
+        echo "<a id='leftbutton' class='pure-button' href='".wp_logout_url($redirect)."'>登出</a>";
+        echo "<a id='rightbutton' class='pure-button' href='http://www.wuplus.net/wp/wordpress/wp-admin/'>管理</a>";
     } ?>
-        
-	<?php if ( !function_exists('dynamic_sidebar')|| !dynamic_sidebar() ) : ?>
-	<div class="pure-menu pure-menu-open" id='baritem'>
-    <ul>
-        <li class="pure-menu-heading">Pages</li>
-        <?php 
-            $pages = get_pages(); 
-            foreach ( $pages as $page ) {
-		$li = '<li><a href="' . get_page_link( $page->ID ) . '">';
-            $li .= $page->post_title;
-            $li .= '</a></li>';
-            echo $li;
-            }
-        ?>
-    </ul>
-	</div>
-
-    <div class="pure-menu pure-menu-open" id='baritem'>
-    <ul>
-        <li class="pure-menu-heading">Category</li>
-        <?php 
-            $categories = get_the_category();
-            if ($catagories) {
-                foreach ( $catagories as $catagory ) {
-                    $li = '<li><a href="' . get_catagory_link( $catagory->term_id ) . '">';
-                    $li .= $catagory->name;
-                    $li .= '</a></li>';
-                    echo $li;
-                }
-            }
-        ?>
-    </ul>
-    </div>
-
-    <div class="pure-menu pure-menu-open" id='baritem'>
-    <ul>
-        <li class="pure-menu-heading">最新评论</li>
-        <?php 
+    <?php 
             $args = array(
                 'status' => 'approve',
-                'number' => '2',
+                'number' => '5',
             );
             $comments = get_comments($args);
-            if ($comments) {
+	    if ($comments) {
                 foreach ( $comments as $comment ) {
-                    $li = "<li id='cmts'><div>".$comment->comment_author.'</div><p>'.mb_substr($comment->comment_content,0,20).'</p></li>';
-                    echo $li;
-                }
+	            if($count%2 == 0){
+			$li = "<div class='bubble-box arrow-left'><div class='wrap'>";
+                        $li .= $comment->comment_author." 说<br />".mb_substr($comment->comment_content,0,20)."</div></div>";
+                        echo $li;
+		    }else{
+			$li = "<div class='bubble-box arrow-right'><div class='wrap'>";
+                        $li .= $comment->comment_author." 说<br />".mb_substr($comment->comment_content,0,20)."</div></div>";
+                        echo $li;
+		    }
+		    $count++;
+		} 
             }
-        ?>
-    </ul>
-    </div>
-	<?php endif; ?>
-    <a id="closebutton" class='pure-button' href="javascript:$.pageslide.close();var ui = document.getElementById('sidebar-pure-u');ui.style.display = '';">Close Menu</a>
+     ?>
+    <a id="closebutton" class='pure-button' href="javascript:$.pageslide.close();var ui = document.getElementById('sidebar-pure-u');ui.style.display = '';">关闭菜单</a>
 </div>

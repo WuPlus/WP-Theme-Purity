@@ -31,11 +31,14 @@ a:focus {
 }
 
 .header {
-    margin: 50% 2em 0;
-    text-align: right;
+    margin: 2em 0;
     position: fixed;
-    bottom: 60%;
-    left: 32px;
+    bottom: 40%;
+    width:25%;
+}
+
+.header hgroup{
+   margin-left:80px;
 }
 
 .brand-title,
@@ -43,7 +46,6 @@ a:focus {
     margin: 0;
 }
 .brand-title {
-    text-transform: uppercase;
 }
 .brand-tagline {
     font-weight: 300;
@@ -278,4 +280,75 @@ a:focus {
     font-size: 14px;
     padding: 0px;
     margin: 0px;
+}
+
+#nag-menu {
+   margin-top:20px;
+   background:rgb(24, 33, 61);
+   border-width:0px;
+   font-size:20px;
+}
+
+#nag-menu a {
+   padding-left:80px;
+   color:white;
+}
+
+#nag-menu a:hover {
+   text-decoration:none;
+   background:#a3b745;
+}
+
+.bubble-box {
+   background: #EEE;
+   width: 200px;
+   margin-bottom: 30px;
+}
+
+.bubble-box .wrap {
+   background: #EEE; /* 修正IE6 */
+   _position: relative;
+   _z-index: 10;
+   color:black;
+}
+        /* arrow-effect */
+.arrow-left {
+   border-left: 20px solid #333;
+   border-top: 20px solid #EEE;
+   margin-top: 20px;
+   margin-left: 20px;
+}
+
+.arrow-right {
+   border-right: 20px solid #333;
+   border-top: 20px solid #EEE;
+   margin-left: 30px;
+}
+
+.arrow-top {
+   border-left: 20px solid #EEE;
+   border-top: 20px solid #333;
+   margin-left: 20px;
+}
+
+.arrow-bottom {
+   border-left: 20px solid #EEE;
+   border-bottom: 20px solid #333;
+   margin-left: 20px;
+}
+
+.arrow-left .wrap, .arrow-right .wrap {
+     width: 180px;
+     padding: 12px 10px 12px 10px;
+     margin-top: -40px;
+}
+
+.arrow-top, .arrow-bottom {
+     width: 140px;
+}
+
+.arrow-top .wrap, .arrow-bottom .wrap {
+    width: 180px;
+    padding: 12px 10px 12px 10px;
+    margin-left: -40px;
 }
