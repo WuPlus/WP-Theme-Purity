@@ -33,7 +33,7 @@ a:focus {
 .header {
     margin: 2em 0;
     position: fixed;
-    bottom: 40%;
+    top: 10%;
     width:25%;
 }
 
@@ -286,7 +286,7 @@ a:focus {
    margin-top:20px;
    background:rgb(24, 33, 61);
    border-width:0px;
-   font-size:20px;
+   font-size:18px;
 }
 
 #nag-menu a {
@@ -310,6 +310,7 @@ a:focus {
    _position: relative;
    _z-index: 10;
    color:black;
+   font-size: 13px;
 }
         /* arrow-effect */
 .arrow-left {
