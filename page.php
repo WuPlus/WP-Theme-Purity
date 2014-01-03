@@ -46,15 +46,11 @@
                     </header>
 
                     <div class="post-description">
-                        <?php the_content('Read the rest of this entry &raquo;'); ?>
+                        <?php the_content('阅读余下的内容 &raquo;'); ?>
                     </div>
                 </section>
             	<?php endwhile; ?>
             </div>
-			<div class="navigation">
-				<div class="alignleft"><?php next_posts_link('&laquo; OlderEntries') ?></div>
-				<div class="alignright"><?php previous_posts_link('Newer Entries&raquo;') ?></div>
-			</div>
 			<?php else : ?>
 			<h2 class="center">Not Found</h2>
 			<p class="center">Sorry, but you are looking for something that isn'there.</p>

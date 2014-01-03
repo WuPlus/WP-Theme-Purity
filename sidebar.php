@@ -35,5 +35,12 @@
 		    } 
         }
      ?>
-    <a id="closebutton" class='pure-button' href="javascript:$.pageslide.close();var ui = document.getElementById('sidebar-pure-u');ui.style.display = '';">关闭菜单</a>
+    <a id="closebutton" class='pure-button' onclick='uiclose();'>关闭菜单</a>
+    <script type="text/javascript">
+        function uiclose(){
+            $.pageslide.close();
+            var ui = document.getElementById('sidebar-pure-u');
+            ui.style.display = '';
+        }
+    </script>
 </div>

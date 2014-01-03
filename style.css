@@ -1,3 +1,12 @@
+/*
+Theme Name: Purity
+Theme URI: http://www.wuplus.net
+Author: WuPlus 
+Author URI: http://wuplus.net
+Description: Purity is a simple minimalism wordpress theme based on an Yahoo open project.
+Version: 2.1
+*/
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -352,4 +361,41 @@ a:focus {
     width: 180px;
     padding: 12px 10px 12px 10px;
     margin-left: -40px;
+}
+
+.pure-paginator a {
+    display: inline;
+}
+
+.pure-paginator {
+    text-align: center;
+}
+
+.items{
+    width:216px;
+    border:1px solid #dcdcdc;
+    overflow:hidden;
+    float:left;
+    margin:15px 26px 0 26px;
+    background-color:#fff;
+}
+.items .img{
+    height:300px;
+    overflow:hidden;
+    position:relative;
+}
+.items .desc{
+    height:301px;
+    width:214px;
+    padding:15px;
+    position:absolute;
+    top:-300px;
+    left:0px;
+    color:#fff;
+    background-image:url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAFoEvQfAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA1JREFUeNpjYmBgOAMAANsAzxM4pZ4AAAAASUVORK5CYII=);
+}
+.items .title{
+    border-top:1px solid #dcdcdc;
+    padding:7px 14px;
+    text-align: center;
 }
