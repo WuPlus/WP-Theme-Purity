@@ -60,31 +60,34 @@
     function get_post_meta_info($postID){
         $temp1 = "分类";
         $categories = get_the_category($postID);
-        foreach ($categories as $category ) {
-        $temp1 .= "<a class='post-category post-category-design' >".$category->name."</a>";
-        }   
+        if($categories != ''){
+            foreach ($categories as $category ) {
+                $temp1 .= "<a class='post-category post-category-design' >".$category->name."</a>";
+            }  
+        } 
         echo $temp1; 
         $temp2 = "标签";
         $count = 0;
         $tags = get_the_tags($postID);
         if($tags == ''){
             $temp2 = "";
-        }
-        foreach ($tags as $tag ) {
-            switch ($count%3) {
-                case 0:
-                    $temp2 .= "<a class='post-category post-category-pure' >".$tag->name."</a>";
+        }else{
+            foreach ($tags as $tag ) {
+                switch ($count%3) {
+                    case 0:
+                        $temp2 .= "<a class='post-category post-category-pure' >".$tag->name."</a>";
+                        break;
+                    case 1:
+                        $temp2 .= "<a class='post-category post-category-yui' >".$tag->name."</a>";
+                        break;
+                    case 2:
+                        $temp2 .= "<a class='post-category post-category-js' >".$tag->name."</a>";
+                        break;
+                }
+                $count++;
+                if ($count > 6) {
                     break;
-                case 1:
-                    $temp2 .= "<a class='post-category post-category-yui' >".$tag->name."</a>";
-                    break;
-                case 2:
-                    $temp2 .= "<a class='post-category post-category-js' >".$tag->name."</a>";
-                    break;
-            }
-            $count++;
-            if ($count > 6) {
-                break;
+                }
             }
         }   
         echo $temp2;
