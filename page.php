@@ -36,7 +36,11 @@
                             作者 <a class="post-author"><?php the_author() ?></a>
                         </p>
                     </header>
+                    <div class="post-description">
+                        <?php the_content('Read the rest of this entry &raquo;'); ?>
+                    </div>
                 </section>
+
             	<?php endwhile; ?>
             </div>
 			<?php else : ?>
