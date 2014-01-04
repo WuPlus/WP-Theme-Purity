@@ -24,6 +24,7 @@
                 <!-- A single blog post -->
                 <?php if (have_posts()) : ?>
 				<?php while (have_posts()) : the_post(); ?>
+                <?php setPostViews(get_the_ID());?>
                 <section class="post" id="post-<?php the_ID(); ?>">
                     <header class="post-header">
                     	<div class="post-avatar">
@@ -33,14 +34,10 @@
                         <h2 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 
                         <p class="post-meta">
-                            作者 <a class="post-author"><?php the_author() ?></a> 分类 
+                            作者 <a class="post-author"><?php the_author() ?></a> 
                             <?php
-                            $keywords = "";
-                            $tags = get_the_category();
-                            foreach ($tags as $tag ) {
-                            $keywords .= "<a class='post-category post-category-design' >".$tag->name."</a>";
-                            }   
-                            echo $keywords;   
+                            get_post_meta_info(get_the_ID());
+                            echo "阅读次数&nbsp;".getPostViews(get_the_ID());
                             ?>
                         </p>
                     </header>

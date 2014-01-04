@@ -95,6 +95,7 @@ a:focus {
 }
 
 .content {
+    min-height:650px;
     padding: 2em 3em 0;
 }
 
@@ -129,7 +130,7 @@ a:focus {
 }
 
 .post-category {
-    margin: 0 0.1em;
+    margin: 0 5px 0 5px;
     padding: 0.3em 1em;
     color: #fff;
     background: #999;
@@ -398,4 +399,8 @@ a:focus {
     border-top:1px solid #dcdcdc;
     padding:7px 14px;
     text-align: center;
+}
+
+#site_info {
+    padding-top:10px;
 }

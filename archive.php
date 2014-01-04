@@ -35,18 +35,13 @@
                         <p class="post-meta">
                             作者 <a class="post-author"><?php the_author() ?></a> 分类 
                             <?php
-                            $keywords = "";
-                            $tags = get_the_category();
-                            foreach ($tags as $tag ) {
-                            $keywords .= "<a class='post-category post-category-design' >".$tag->name."</a>";
-                            }   
-                            echo $keywords;   
+                            get_post_meta_info(the_ID());
                             ?>
                         </p>
                     </header>
 
                     <div class="post-description">
-                        <?php the_content('Read the rest of this entry &raquo;'); ?>
+                        <?php the_content('已经有'.getPostViews(get_the_ID()).'人阅读了余下的内容，点击阅读 &raquo;'); ?>
                     </div>
                 </section>
             	<?php endwhile; ?>

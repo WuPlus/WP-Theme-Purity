@@ -1,5 +1,7 @@
 <?php
     register_nav_menus();
+
+    //page index
     function pagination($query_string){   
     	global $posts_per_page, $paged;   
     	$my_query = new WP_Query($query_string ."&posts_per_page=-1");   
@@ -28,4 +30,64 @@
     		echo "</ul>\n";   
     	}   
     }
+
+    function getPostViews($postID){
+        $count_key = 'post_views_count';
+        $count = get_post_meta($postID, $count_key, true);
+        if($count==''){
+            delete_post_meta($postID, $count_key);
+            add_post_meta($postID, $count_key, '0');
+            return "0";
+        }
+        return $count;
+    }
+    
+    function setPostViews($postID) {
+        $count_key = 'post_views_count';
+        $count = get_post_meta($postID, $count_key, true);
+        if($count==''){
+            $count = 0;
+            delete_post_meta($postID, $count_key);
+            add_post_meta($postID, $count_key, '0');
+        }else{
+            $count++;
+            update_post_meta($postID, $count_key, $count);
+        }
+    }
+
+    remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
+    function get_post_meta_info($postID){
+        $temp1 = "分类";
+        $categories = get_the_category($postID);
+        foreach ($categories as $category ) {
+        $temp1 .= "<a class='post-category post-category-design' >".$category->name."</a>";
+        }   
+        echo $temp1; 
+        $temp2 = "标签";
+        $count = 0;
+        $tags = get_the_tags($postID);
+        if($tags == ''){
+            $temp2 = "";
+        }
+        foreach ($tags as $tag ) {
+            switch ($count%3) {
+                case 0:
+                    $temp2 .= "<a class='post-category post-category-pure' >".$tag->name."</a>";
+                    break;
+                case 1:
+                    $temp2 .= "<a class='post-category post-category-yui' >".$tag->name."</a>";
+                    break;
+                case 2:
+                    $temp2 .= "<a class='post-category post-category-js' >".$tag->name."</a>";
+                    break;
+            }
+            $count++;
+            if ($count > 6) {
+                break;
+            }
+        }   
+        echo $temp2;
+    }
 ?>
+
