@@ -18,11 +18,13 @@
                         'container_class' => 'pure-menu pure-menu-open',
                         'container_id' => 'nag-menu',
                         'menu_class' => 'menu',
-                        'menu_id'         => '',
-                        'depth'           => 1
+                        'menu_id'         => 'my_menu',
+                        'depth'           => 2
                     );
 
                     wp_nav_menu($defaults);
                     ?>
+
         </header>
     </div>
+    <div style='clear:both'></div>

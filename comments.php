@@ -6,18 +6,10 @@ if ( post_password_required() )
 <div id="comments" class="comments-area">
 
 	<?php if ( have_comments() ) : ?>
-		<h2 class="comments-title">
-			
-		</h2>
+		<h2 class="comments-title"></h2>
 
 		<ol class="comment-list">
-			<?php
-				wp_list_comments( array(
-					'style'       => 'ol',
-					'short_ping'  => true,
-					'avatar_size' => 74,
-				) );
-			?>
+			<?php wp_list_comments( array( 'callback' => 'purity_comment', 'style' => 'ol' ) ); ?>
 		</ol><!-- .comment-list -->
 
 		<?php
@@ -36,7 +28,6 @@ if ( post_password_required() )
 		<?php endif; ?>
 
 	<?php endif; // have_comments() ?>
-
-	<?php comment_form(); ?>
+	<?php purity_comment_form(); ?>
 
 </div><!-- #comments -->

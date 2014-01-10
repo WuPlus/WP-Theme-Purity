@@ -1,9 +1,7 @@
 <?php get_header(); ?>
 <div class="pure-u-1">
         <div class="content">
-            <!-- A wrapper for all the blog posts -->
-            <div class="posts">
-                <div class="pure-g-r" id='social'>
+            <div class="pure-g-r" id='social'>
                     <div class="pure-u-1-5">
                         <a href='http://renren.com'><img src='<?php echo get_template_directory_uri(); ?>/icon/social-facebook-outline.svg'></img></a>
                     </div>
@@ -21,6 +19,10 @@
                     </div>
                 </div>
                 <h1 class="content-subhead">Page</h1>
+            <!-- A wrapper for all the blog posts -->
+            <div style="clear:both"></div>
+            <?php get_sidebar()?>
+            <div class="posts">
                 <!-- A single blog post -->
                 <?php if (have_posts()) : ?>
 				<?php while (have_posts()) : the_post(); ?>

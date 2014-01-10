@@ -1,9 +1,6 @@
 <?php get_header(); ?>
 <div class="pure-u-1">
-        <div class="content">
-            <!-- A wrapper for all the blog posts -->
-            <div class="posts">
-                <div class="pure-g-r" id='social'>
+        <div class="pure-g-r" id='social'>
                     <div class="pure-u-1-5">
                         <a href='http://renren.com'><img src='<?php echo get_template_directory_uri(); ?>/icon/social-facebook-outline.svg'></img></a>
                     </div>
@@ -19,8 +16,13 @@
                     <div class="pure-u-1-5">
                         <a href='#'><img src='<?php echo get_template_directory_uri(); ?>/icon/social-rss-outline.svg'></img></a>
                     </div>
-                </div>
-                <h1 class="content-subhead">Recent Post</h1>
+            </div>
+            <h1 class="content-subhead">Recent Post</h1>
+        <div class="content">
+            <!-- A wrapper for all the blog posts -->
+            <div style="clear:both"></div>
+            <?php get_sidebar();?>
+            <div class="posts">
                 <!-- A single blog post -->
                 <?php if (have_posts()) : ?>
 				<?php while (have_posts()) : the_post(); ?>
@@ -41,45 +43,63 @@
                     </header>
 
                     <div class="post-description">
+                        <?php if ( has_post_thumbnail() ) { ?>
+                                <?php the_post_thumbnail('thumbnail',array('class'=>'thumb')); ?>
+                        <?php } else {?>
+                        <img src="<?php bloginfo('template_url'); ?>/icon/<?php echo rand(1,6)?>.jpg" class="thumb" />
+                        <?php } ?>
                         <?php the_content('已经有'.getPostViews(get_the_ID()).'人阅读了余下的内容，点击阅读 &raquo;'); ?>
                     </div>
                 </section>
             	<?php endwhile; ?>
+                <?php pagination($query_string); ?>
             </div>
-            <?php pagination($query_string); ?>
 			<?php else : ?>
 			<h2 class="center">Not Found</h2>
 			<p class="center">Sorry, but you are looking for something that isn'there.</p>
 			<?php include (TEMPLATEPATH . "/searchform.php"); ?> 
 			<?php endif; ?>
         </div>
-        <?php get_footer(); ?>
-        <div id="content1">
-        <a href="#modal" class="second">菜单</a>
-        </div>
-        <div id="modal">
-            <?php get_sidebar(); ?>
-        </div>
+        <?php get_footer();?>
+    </div>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-1.7.1.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.pageslide.min.js"></script>
 <script>
         /* Slide to the left, and make it model (you'll have to call $.pageslide.close() to close) */
         $(".second").pageslide({ direction: "left", modal: true });
-        $(".second").click(function(){
-            var ui = document.getElementById("sidebar-pure-u");
-            if(ui.style.display == "none"){
-                ui.style.display = "";
-                $.pageslide.close();
-            }else{
-                ui.style.display="none";
-            }
-        });
-        $(".pure-u-1").click(function(){
-            var ui = document.getElementById("sidebar-pure-u");
-            if(ui.style.display == "none"){
-                ui.style.display = "";
-                $.pageslide.close();
-            }
+        $(document).ready(function() {
+            // Show or hide the sticky footer button
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 200) {
+                    var str = $('.right_sidebar').height();
+                    if ($(this).scrollTop() > str) {
+                        $('#go-top').fadeIn(200);
+                    };
+                } else if ($(this).scrollTop() < str) {
+                    $('#go-top').fadeOut(200);
+                } else {
+                    $('#go-top').fadeOut(200);
+                }
+            });
+
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 600) {
+                    var str = $('.right_sidebar').height();
+                    if ($(this).scrollTop() > str) {
+                        $('.broad').fadeIn(200);
+                    };
+                } else if ($(this).scrollTop() < str){
+                    $('.broad').fadeOut(200);     
+                } else {
+                    $('.broad').fadeOut(200);  
+                }
+            });
+            
+            // Animate the scroll to top
+            $('#go-top').click(function(event) {
+                event.preventDefault();
+                
+                $('html, body').animate({scrollTop: 0}, 300);
+            })
         });
     </script>
 </body>

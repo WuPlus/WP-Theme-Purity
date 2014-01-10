@@ -24,7 +24,7 @@ a:focus {
 
 /* LAYOUT CSS */
 #layout {
-    padding-left: 25%; /* "left col (nav + list)" width */
+    padding-left: 180px; /* "left col (nav + list)" width */
     position: relative;
     min-height:100%;
 }
@@ -33,9 +33,9 @@ a:focus {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 25%;
-    margin-left: -25%;
-    background: rgb(24, 33, 61);
+    width: 180px;
+    margin-left: -180px;
+    background: #52accc;
     color: #fff;
 }
 
@@ -43,11 +43,11 @@ a:focus {
     margin: 2em 0;
     position: fixed;
     top: 10%;
-    width:25%;
+    width:180px;
 }
 
 .header hgroup{
-   margin-left:80px;
+   margin-left:20px;
 }
 
 .brand-title,
@@ -92,11 +92,22 @@ a:focus {
     font-size: 80%;
     font-weight: 500;
     letter-spacing: 0.1em;
+    margin-top: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 0px;
 }
 
 .content {
     min-height:650px;
-    padding: 2em 3em 0;
+    padding: 0 250px 0 25px;
+    margin-top: -15px;
+}
+
+.posts{
+    width: 100%;
+    padding-right: 20px;
+    margin-bottom: 30px;
 }
 
 .post {
@@ -197,56 +208,11 @@ a:focus {
     }
 }
 
-#pageslide {
-    /* These styles MUST be included. Do not change. */
-    display:none;
-    position: absolute;
-    position: fixed;
-    top: 0;
-    height: 100%;
-    z-index: 999999;
-    
-    /* Specify the width of your pageslide here */
-    width: 260px;
-    padding: 1px;
-    
-    /* These styles are optional, and describe how the pageslide will look */
-    background-color: #333;
-    color: #FFF;
-    -webkit-box-shadow: inset 0 0 5px 5px #222;
-    -moz-shadow: inset 0 0 5px 5px #222;
-    box-shadow: inset 0 0 5px 5px #222;
-}
-
-#modal { display: none; }
-#closebutton {
-    position: absolute;
-    bottom: 5%;
-    left: 25%;
-}
-
-#content1 {
-    display:block;
-    background-image: url(icon/menu.svg);
-    background-size: 20px 20px;
-    background-repeat: no-repeat;
-    padding-top: 20px;
-    position: fixed;
-    top: 50%;
-    right: 0%;
-    width: 20px;
-    height: 50px;
-    color: #fff;
-}
-
-#content1 a {
-    display: block;
-    padding-left: 2px;
-    text-decoration: none;
-}
-
 #social {
+    padding-top: 8px;
     float:right;
+    margin-right: 48px;
+    margin-top: 10px;
 }
 
 .pure-u-1-5 img {
@@ -256,10 +222,10 @@ a:focus {
 }
 
 #leftbutton {
-    margin-left: 20px;
+    margin-left: 0px;
+    margin-right: 40px;
     margin-top: 20px;
-    margin-right: 28px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 #sidebar .pure-u-1 p {
@@ -294,19 +260,19 @@ a:focus {
 
 #nag-menu {
    margin-top:20px;
-   background:rgb(24, 33, 61);
+   background:#52accc;
    border-width:0px;
    font-size:18px;
 }
 
 #nag-menu a {
-   padding-left:80px;
+   padding-left:20px;
    color:white;
 }
 
 #nag-menu a:hover {
    text-decoration:none;
-   background:#a3b745;
+   background:#0074a2;
 }
 
 .bubble-box {
@@ -404,3 +370,197 @@ a:focus {
 #site_info {
     padding-top:10px;
 }
+
+.right_sidebar {
+    width:200px;
+    float:right;
+    margin-right: -220px;
+}
+
+.right_siderbar_subhead {
+    text-transform: uppercase;
+    color: #aaa;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    padding-top:6px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+.my_widget li{
+    letter-spacing: 0px;
+    margin-bottom: 5px;
+}
+
+.my_widget a{
+    color:black;
+}
+
+.my_widget {
+    margin-bottom: 30px;
+    list-style-type: none;
+}
+
+.my_widget ul {
+    padding-left: 10px;
+    margin-left:10px;
+    font-size: 14px;
+    color:black;
+    list-style-image: url(icon/ios7-arrow-forward.svg);
+   
+}
+
+#social-2 {
+    margin-top: 30px;
+}
+
+.thumb {
+    float:right;
+}
+
+.thumb {
+    width: 200px !important;
+    height: 200px !important;
+}
+
+.post-description {
+    min-height: 270px;
+}
+
+#go-top {
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 12px;
+    padding: 1em;
+    display: none;
+    margin-right: 8%;
+}
+
+#go-top:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.comment-list li {
+    border-top: 1px solid #ccc;
+    list-style: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.comment-list {
+    padding-left: 0px;
+}
+
+.comment img {
+    float: left;
+    margin-right: 20px;
+    padding-top: 8px;
+}
+
+.comment {
+    padding-bottom: 30px;
+}
+
+.comment-meta time {
+    float:right;
+    color:black;
+    font-size: 12px;
+}
+
+.comment-content{
+    margin-top: -10px;
+}
+
+.comment-content p {
+    margin-bottom: 8px;
+    margin-top: 12px;
+}
+
+.reply button a {
+    font-size: 12px;
+    color: black;
+    text-decoration: none;
+}
+
+.reply{
+    float: right;
+}
+
+.children {
+    margin-bottom: 0px;
+}
+
+.reply_box {
+    padding: .5em .6em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    font-size: .8em;
+    box-shadow: inset 0 1px 3px #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#commentbox {
+    padding: .5em .6em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    font-size: .8em;
+    box-shadow: inset 0 1px 3px #ddd;
+    border-radius: 4px;
+    resize: none;
+    width: 100%;
+}
+
+#submit {
+    padding: .5em 1.5em;
+    color: black;
+    border: 0 rgba(0, 0, 0, 0);
+    background-color: #E6E6E6;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.broad {
+    display: none;
+    position: fixed;
+    bottom: 40%;
+    width: 16%;
+}
+
+#myrecentcomments {
+    list-style: none;
+    margin-left: 0px;
+}
+
+#myrecentcomments li {
+    padding-bottom: 15px;
+    border-bottom: 1px dotted #ccc;
+}
+
+.recent-comment-avatar{
+    float: left;
+    margin-right: 15px;
+    margin-top: 4px;
+}
+
+.recent-comment-content p {
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+.recent-comment-meta p {
+    margin-bottom: 5px;
+    margin-top: 7px;
+}
+
+.brand-tagline {
+    color:white;
+}
+
+
