@@ -64,8 +64,6 @@
     </div>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-1.7.1.min.js"></script>
 <script>
-        /* Slide to the left, and make it model (you'll have to call $.pageslide.close() to close) */
-        $(".second").pageslide({ direction: "left", modal: true });
         $(document).ready(function() {
             // Show or hide the sticky footer button
             $(window).scroll(function() {
