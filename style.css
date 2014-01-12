@@ -24,7 +24,7 @@ a:focus {
 
 /* LAYOUT CSS */
 #layout {
-    padding-left: 180px; /* "left col (nav + list)" width */
+    padding-left: 155px; /* "left col (nav + list)" width */
     position: relative;
     min-height:100%;
 }
@@ -33,8 +33,8 @@ a:focus {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 180px;
-    margin-left: -180px;
+    width: 155px;
+    margin-left: -155px;
     background: #52accc;
     color: #fff;
 }
@@ -43,11 +43,11 @@ a:focus {
     margin: 2em 0;
     position: fixed;
     top: 10%;
-    width:180px;
+    width:155px;
 }
 
 .header hgroup{
-   margin-left:20px;
+   margin-left:10px;
 }
 
 .brand-title,
