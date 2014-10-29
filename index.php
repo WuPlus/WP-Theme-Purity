@@ -63,42 +63,5 @@
         <?php get_footer();?>
     </div>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-1.7.1.min.js"></script>
-<script>
-        $(document).ready(function() {
-            // Show or hide the sticky footer button
-            $(window).scroll(function() {
-                if ($(this).scrollTop() > 200) {
-                    var str = $('.right_sidebar').height();
-                    if ($(this).scrollTop() > str) {
-                        $('#go-top').fadeIn(200);
-                    };
-                } else if ($(this).scrollTop() < str) {
-                    $('#go-top').fadeOut(200);
-                } else {
-                    $('#go-top').fadeOut(200);
-                }
-            });
-
-            $(window).scroll(function() {
-                if ($(this).scrollTop() > 600) {
-                    var str = $('.right_sidebar').height();
-                    if ($(this).scrollTop() > str) {
-                        $('.broad').fadeIn(200);
-                    };
-                } else if ($(this).scrollTop() < str){
-                    $('.broad').fadeOut(200);     
-                } else {
-                    $('.broad').fadeOut(200);  
-                }
-            });
-            
-            // Animate the scroll to top
-            $('#go-top').click(function(event) {
-                event.preventDefault();
-                
-                $('html, body').animate({scrollTop: 0}, 300);
-            })
-        });
-    </script>
 </body>
 </html>

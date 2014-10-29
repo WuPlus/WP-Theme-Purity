@@ -263,6 +263,7 @@ a:focus {
    background:#52accc;
    border-width:0px;
    font-size:18px;
+   text-align: center;
 }
 
 #nag-menu a {
